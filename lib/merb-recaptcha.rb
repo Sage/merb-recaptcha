@@ -4,7 +4,8 @@ if defined?(Merb::Plugins)
   # Merb gives you a Merb::Plugins.config hash...feel free to put your stuff in your piece of it
   Merb::Plugins.config[:merb_recaptcha] = {
     :public_key => "",
-    :private_key => ""
+    :private_key => "",
+    :allow_disable_by_cookie => false
   }
   
   Merb::BootLoader.before_app_loads do
