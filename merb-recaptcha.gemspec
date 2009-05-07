@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merb-recaptcha}
-  s.version = "1.0.2.a"
+  s.version = "1.0.2.b"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Anton Ageev"]
+  s.authors = ["Anton Ageev", "Michael Johnston"]
   s.date = %q{2008-12-19}
   s.description = %q{Merb plugin that provides helpers for recaptcha.net service}
   s.email = %q{antage@gmail.com}
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{merb-recaptcha}
-  s.rubygems_version = %q{1.3.1}
+  s.rubygems_version = %q{1.3.2}
   s.summary = %q{Merb plugin that provides helpers for recaptcha.net service}
   s.test_files = ["spec/spec_helper.rb", "spec/recaptcha_ajax_with_options_spec.rb", "spec/recaptcha_noajax_without_noscript_spec.rb", "spec/recaptcha_noajax_with_noscript_spec.rb", "spec/recaptcha_valid_spec.rb", "spec/recaptcha_ajax_spec.rb", "spec/recaptcha_ajax_with_callback_spec.rb", "spec/recaptcha_noajax_with_options_spec.rb", "spec/recaptcha_ajax_with_jquery_spec.rb", "spec/fixture/app/controllers/application.rb", "spec/fixture/app/controllers/exceptions.rb", "spec/fixture/app/controllers/recaptcha.rb", "spec/fixture/app/views/exceptions/not_acceptable.html.erb", "spec/fixture/app/views/exceptions/not_found.html.erb", "spec/fixture/app/views/layout/application.html.erb", "spec/fixture/app/views/recaptcha/ajax.html.erb", "spec/fixture/app/views/recaptcha/ajax_with_callback.html.erb", "spec/fixture/app/views/recaptcha/ajax_with_options.html.erb", "spec/fixture/app/views/recaptcha/noajax_without_noscript.html.erb", "spec/fixture/app/views/recaptcha/noajax_with_options.html.erb", "spec/fixture/app/views/recaptcha/noajax_with_noscript.html.erb", "spec/fixture/app/views/recaptcha/ajax_with_jquery.html.erb", "spec/fixture/app/helpers/global_helpers.rb", "spec/fixture/app/helpers/recaptcha_helpers.rb"]
 
