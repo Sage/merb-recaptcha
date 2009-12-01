@@ -7,8 +7,11 @@ class FakeController < Merb::Controller
 end
 
 describe "FakeController#check_recaptcha" do
-  def do_request(ssl = false)
-    @response = dispatch_to(FakeController, :check_recaptcha, { :recaptcha_challenge_field => "blabla", :recaptcha_response_field => "blabla" }, { "HTTPS" => ssl ? "on" : "off" })
+  def do_request(ssl = false, options={})
+    params = { 
+      :recaptcha_challenge_field => "blabla", 
+      :recaptcha_response_field => "blabla"}.merge(options)    
+    @response = dispatch_to(FakeController, :check_recaptcha, params, { "HTTPS" => ssl ? "on" : "off" })
   end
 
   def stub_response(body)
@@ -120,6 +123,14 @@ describe "FakeController#check_recaptcha" do
       lambda { do_request }.should raise_error(Exception)
       ENV['OFFLINE'] = '1'
       lambda { do_request }.should_not raise_error
+    end
+  end
+  
+  describe "with blank recaptcha_response_field" do
+    it "should render 'false'" do
+      Net::HTTP.expects(:post_form).never
+      do_request(false, :recaptcha_response_field => "")
+      @response.should have_selector("*:contains('false')")
     end
   end
 end

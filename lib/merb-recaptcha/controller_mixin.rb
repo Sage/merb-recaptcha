@@ -11,6 +11,8 @@ module Merb # :nodoc:
     def recaptcha_valid?
       return true if (Merb.testing? && !Merb::RecaptchaMixin.const_defined?(:DO_NOT_IGNORE_RECAPTCHA_IN_TESTING_ENV))
       return true if Merb::Plugins.config[:merb_recaptcha][:allow_disable_by_cookie] && cookies[:recaptcha_disabled]=="true"
+      puts "params[:recaptcha_response_field]: #{params[:recaptcha_response_field].inspect}"
+      return false if params[:recaptcha_response_field].blank?
       begin
         response = Net::HTTP.post_form(URI.parse("#{Merb::Recaptcha::API_VERIFY_SERVER}/verify"), {
           :privatekey => Merb::Plugins.config[:merb_recaptcha][:private_key],
