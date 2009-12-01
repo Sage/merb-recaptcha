@@ -11,9 +11,9 @@ require 'spec/rake/spectask'
 require 'merb-core'
 require 'merb-core/tasks/merb'
 
-GEM_NAME = "merb-recaptcha"
+GEM_NAME = "lastobelus-merb-recaptcha"
 GEM_VERSION = "1.0.3"
-AUTHOR = "Anton Ageev"
+AUTHOR = "Anton Ageev, Michael Johnston"
 EMAIL = "antage@gmail.com"
 HOMEPAGE = "http://github.com/antage/merb-recaptcha/"
 SUMMARY = "Merb plugin that provides helpers for recaptcha.net service"
