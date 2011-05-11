@@ -1,7 +1,7 @@
 module Merb
   module Recaptcha
-    API_SERVER = "http://api.recaptcha.net"
-    API_SECURE_SERVER = "https://api-secure.recaptcha.net"
-    API_VERIFY_SERVER = "http://api-verify.recaptcha.net"
+    API_SERVER = "http://www.google.com/recaptcha/api"
+    API_SECURE_SERVER = "https://www.google.com/recaptcha/api"
+    API_VERIFY_SERVER = "https://www.google.com/recaptcha/api"
   end
 end
